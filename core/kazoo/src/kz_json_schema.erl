@@ -656,7 +656,7 @@ build_validate_error(Property, Code, Message, Options) ->
 
     {props:get_value('error_code', Options)
     ,props:get_value('error_message', Options)
-    ,kz_json:from_list([{[Key, Code], Error}])
+    ,kz_json:set_values([{[Key, Code], Error}], kz_json:new())
     }.
 
 -spec build_error_message(ne_binary(), kz_json:object()) -> kz_json:object() | ne_binary().
